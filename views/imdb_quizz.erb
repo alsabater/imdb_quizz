@@ -1,0 +1,16 @@
+<h1><%= @quizz.question1 %></h1>
+		<% if movie.year == @quizz.year_solution %>
+			<img src="<%= movie.poster %>" onclick="alert('Good Job!')" width="130" height="190">
+		<% else %>
+			<img src="<%= movie.poster %>" onclick="alert('Try again!')" width="130" height="190">
+		<% end %>
+
+
+
+
+		<h1><%= @quizz.question2 %></h1>
+		<% if movie.director == @quizz.director_solution %>
+			<img src="<%= movie.poster %>" onclick="alert('Good Job!')" width="130" height="190">
+		<% else %>
+			<img src="<%= movie.poster %>" onclick="alert('Try again!')" width="130" height="190">
+		<% end %>

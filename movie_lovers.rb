@@ -18,6 +18,7 @@ get '/search' do
 	list = @movies.storing_movies_with_posters
 	@quizz = Trivia.new list
 	@quizz.generate_answer
+	@quizz.ask_question
 	erb :imdb_movies
 end
 

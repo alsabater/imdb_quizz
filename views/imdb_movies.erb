@@ -1,9 +1,21 @@
-
-<h1><%= @quizz.ask_question %></h1>
-<% @movies.movies_with_posters.map do |movie|%>
-	<% if movie.year == @quizz.year_solution %>
-		<img src="<%= movie.poster %>" onclick="alert('Good Job!')" width="130" height="190">
-	<% else %>
-		<img src="<%= movie.poster %>" onclick="alert('Try again!')" width="130" height="190">
-	<% end %>
+<% number = rand 3 %>
+<% if number == 1 %>
+	<h1><%= @quizz.question_1 %></h1>
+		<% @movies.movies_with_posters.map do |movie|%>
+			<% if movie.year == @quizz.year_solution %>
+				<img src="<%= movie.poster %>" onclick="alert('Good Job!')" width="130" height="190">
+			<% else %>
+				<img src="<%= movie.poster %>" onclick="alert('Try again!')" width="130" height="190">
+			<% end %>
+		<% end %>
+<% end %>	
+<% if number == 2 %>
+	<h1><%= @quizz.question_2 %></h1>
+		<% @movies.movies_with_posters.map do |movie|%>
+			<% if movie.director == @quizz.director_solution %>
+				<img src="<%= movie.poster %>" onclick="alert('Good Job!')" width="130" height="190">
+			<% else %>
+				<img src="<%= movie.poster %>" onclick="alert('Try again!')" width="130" height="190">
+			<% end %>
+		<% end %>
 <% end %>
